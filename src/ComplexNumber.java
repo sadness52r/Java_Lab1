@@ -24,10 +24,12 @@ public class ComplexNumber implements IOperated<ComplexNumber>{
         return new ComplexNumber(real, -image);
     }
     public ComplexNumber Add(ComplexNumber num){
-        return new ComplexNumber(real + num.real, image + num.image);
+        return new ComplexNumber(real + num.real,
+                image + num.image);
     }
     public ComplexNumber Substract(ComplexNumber num){
-        return new ComplexNumber(real - num.real, image - num.image);
+        return new ComplexNumber(real - num.real,
+                image - num.image);
     }
     public ComplexNumber Multiply(ComplexNumber num){
         return new ComplexNumber(real * num.real - image * num.image,
