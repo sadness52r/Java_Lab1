@@ -27,7 +27,7 @@ public class ComplexNumber implements IOperated<ComplexNumber>{
         return new ComplexNumber(real + num.real,
                 image + num.image);
     }
-    public ComplexNumber Substract(ComplexNumber num){
+    public ComplexNumber Subtract(ComplexNumber num){
         return new ComplexNumber(real - num.real,
                 image - num.image);
     }

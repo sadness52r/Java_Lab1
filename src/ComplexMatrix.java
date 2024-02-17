@@ -1,93 +1,21 @@
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-
-public class Matrix<T> implements IOperated<Matrix<T>>, IOverrideList<T>{
+public class ComplexMatrix implements IOperated<ComplexMatrix>{
     private int rows;
     private int columns;
-    private List<List<T>> matrix;
+    private ComplexNumber[][] matrix;
 
-    Matrix(int rows, int cols){
+    ComplexMatrix(int rows, int cols){
         try{
             this.rows = rows;
             columns = cols;
-            matrix = new List<List<T>>(){
-                public int size() {
-                    return 0;
-                }
-                public boolean isEmpty() {
-                    return false;
-                }
-                public boolean contains(T t) {
-                    return false;
-                }
-                public Iterator<List<T>> iterator() {
-                    return null;
-                }
-                public T[] toArray() {
-                    return new T[0];
-                }
-                //    public <T> T[] toArray(T[] a) {
-//        return null;
-//    }
-                public boolean add(List<T> ts) {
-                    return false;
-                }
-                public boolean remove(T o) {
-                    return false;
-                }
-                public boolean containsAll(Collection<?> c) {
-                    return false;
-                }
-                public boolean addAll(Collection<? extends List<T>> c) {
-                    return false;
-                }
-                public boolean addAll(int index, Collection<? extends List<T>> c) {
-                    return false;
-                }
-                public boolean removeAll(Collection<?> c) {
-                    return false;
-                }
-                public boolean retainAll(Collection<?> c) {
-                    return false;
-                }
-                public void clear() {
-
-                }
-                public List<T> get(int index) {
-                    return null;
-                }
-                public List<T> set(int index, List<T> element) {
-                    return null;
-                }
-                public List<T> remove(int index) {
-                    return null;
-                }
-                public int indexOf(T t) {
-                    return 0;
-                }
-                public int lastIndexOf(T t) {
-                    return 0;
-                }
-                public ListIterator<List<T>> listIterator() {
-                    return null;
-                }
-                public ListIterator<List<T>> listIterator(int index) {
-                    return null;
-                }
-                public List<List<T>> subList(int fromIndex, int toIndex) {
-                    return null;
-                }
-            };
+            matrix = new ComplexNumber[this.rows][columns];
         }
         catch(RuntimeException e){
             System.out.println(e.getMessage());
         }
     }
-    Matrix(List<List<T>> listMatrix){
+    ComplexMatrix(ComplexNumber[][] listMatrix){
         rows = listMatrix.length;
-        columns = listMatrix.getFirst().length;
+        columns = listMatrix[0].length;
         matrix = listMatrix;
     }
 
@@ -198,7 +126,4 @@ public class Matrix<T> implements IOperated<Matrix<T>>, IOverrideList<T>{
         }
         return det;
     }
-
-
-
 }
