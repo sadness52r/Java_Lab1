@@ -126,4 +126,25 @@ public class ComplexMatrix implements IOperated<ComplexMatrix>{
         }
         return det;
     }
+
+    @Override
+    public String toString(){
+        String strMat = "";
+        int maxSize = -1;
+        for (int i = 0; i < rows; i++){
+            for (int j = 0; j < columns; j++){
+                if (matrix[i][j].toString().length() > maxSize){
+                    maxSize = matrix[i][j].toString().length();
+                }
+            }
+        }
+
+        for (int i = 0; i < rows; i++){
+            for (int j = 0; j < columns; j++){
+                strMat = strMat.concat( matrix[i][j].toString() + " ".repeat(2 * maxSize - matrix[i][j].toString().length()));
+            }
+            strMat = strMat.concat("\n");
+        }
+        return strMat;
+    }
 }
