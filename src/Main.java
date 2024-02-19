@@ -47,7 +47,8 @@ public class Main {
         System.out.println("Sum: \n" + mat1.toString() + " + \n" + mat2.toString() + " = \n" + mat1.Add(mat2).toString());
         System.out.println("Subtract: \n" + mat1.toString() + " - \n" + mat2.toString() + " = \n" + mat1.Subtract(mat2).toString());
         System.out.println("Multiply: \n" + mat1.toString() + " * \n" + mat2.toString() + " = \n" + mat1.Multiply(mat2).toString());
-
-
+        System.out.println("Determinant 5x5: \n" + mat1.toString() + " Determinant is: \n" + mat1.Determinant(5));
+        System.out.println("Determinant 3x3: \n" + mat5.toString() + " Determinant is: \n" + mat5.Determinant(3));
+        //System.out.println("Determinant 3x6: \n" + mat3.toString() + " Determinant is: \n" + mat3.Determinant(3)); //uncomment to check the exception
     }
 }
